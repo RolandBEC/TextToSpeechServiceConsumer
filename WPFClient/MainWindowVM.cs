@@ -1,6 +1,6 @@
-﻿using TextToSpeechServiceConsumer.MVVM;
+﻿using TextToSpeechServiceConsumer.WPFClient.MVVM;
 
-namespace TextToSpeechServiceConsumer
+namespace TextToSpeechServiceConsumer.WPFClient
 {
     public class MainWindowVM : BaseViewModel
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextToSpeechServiceConsumer
+namespace TextToSpeechServiceConsumer.WPFClient
 {
     internal class MainWindowController
     {

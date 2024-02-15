@@ -1,11 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace TextToSpeechServiceConsumer.MVVM
+namespace TextToSpeechServiceConsumer.WPFClient.MVVM
 {
-    /// <summary>
-    ///     Provide a base class for ViewModels that need implementation for INotifyPropertyChanged
-    /// </summary>
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
@@ -14,7 +11,7 @@ namespace TextToSpeechServiceConsumer.MVVM
         {
             fieldReference = newValue;
 
-            PropertyChangedEventHandler handler = this.PropertyChanged;
+            PropertyChangedEventHandler handler = PropertyChanged;
             handler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
