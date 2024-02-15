@@ -1,9 +1,11 @@
-﻿using TextToSpeechServiceConsumer.WPFClient.MVVM;
+﻿using System.Collections.ObjectModel;
+using TextToSpeechServiceConsumer.WPFClient.MVVM;
 
 namespace TextToSpeechServiceConsumer.WPFClient
 {
     public class MainWindowVM : BaseViewModel
     {
+
         private string _text;
         public string Text
         {

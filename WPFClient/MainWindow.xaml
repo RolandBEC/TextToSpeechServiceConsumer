@@ -4,9 +4,72 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TextToSpeechServiceConsumer"
+        xmlns:wpfClient="clr-namespace:TextToSpeechServiceConsumer.WPFClient"
+        xmlns:resx="clr-namespace:TextToSpeechServiceConsumer.Properties"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance wpfClient:MainWindowVM}">
+    <Window.Resources>
+        <Style x:Key="LabelStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="0 0 5 0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="ParameterTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="0 2"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25 "/>
+                <RowDefinition Height="25 "/>
+                <RowDefinition Height="25 "/>
+                <RowDefinition Height="25 "/>
+            </Grid.RowDefinitions>
+
+            <!-- language -->
+            <TextBlock Grid.Row="0" Grid.Column="0"
+                       Style="{StaticResource LabelStyle}"
+                       Text="{x:Static resx:Resources.Label_Language}"/>
+            <TextBox Grid.Row="0" Grid.Column="1"
+                     Style="{StaticResource ParameterTextBox}"
+                     Text="{Binding Language, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <!-- speech -->
+            <TextBlock Grid.Row="1" Grid.Column="0"
+                       Style="{StaticResource LabelStyle}"
+                       Text="Language"/>
+            <TextBox Grid.Row="1" Grid.Column="1"
+                     Style="{StaticResource ParameterTextBox}"
+                     Text="{Binding SpeechRate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            
+            <!-- Audio format -->
+            <TextBlock Grid.Row="2" Grid.Column="0"
+                       Style="{StaticResource LabelStyle}"
+                       Text="Language"/>
+            <TextBox Grid.Row="2" Grid.Column="1"
+                     Style="{StaticResource ParameterTextBox}"
+                     Text="{Binding SpeechAudioFormat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <!-- Audio codec -->
+            <TextBlock Grid.Row="3" Grid.Column="0"
+                       Style="{StaticResource LabelStyle}"
+                       Text="Language"/>
+            <TextBox Grid.Row="3" Grid.Column="1"
+                     Style="{StaticResource ParameterTextBox}"
+                     Text="{Binding SpeechAudioCodec, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
 
     </Grid>
 </Window>
