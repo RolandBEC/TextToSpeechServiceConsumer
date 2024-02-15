@@ -22,7 +22,7 @@ namespace TextToSpeechServiceConsumer.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace TextToSpeechServiceConsumer.Properties {
         ///   Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TextToSpeechServiceConsumer.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace TextToSpeechServiceConsumer.Properties {
         ///   les recherches de ressources à l'aide de cette classe de ressource fortement typée.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,16 +63,16 @@ namespace TextToSpeechServiceConsumer.Properties {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Audio codec.
         /// </summary>
-        internal static string Label_AudioCode {
+        public static string Label_AudioCodec {
             get {
-                return ResourceManager.GetString("Label_AudioCode", resourceCulture);
+                return ResourceManager.GetString("Label_AudioCodec", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Audio format.
         /// </summary>
-        internal static string Label_AudioFormat {
+        public static string Label_AudioFormat {
             get {
                 return ResourceManager.GetString("Label_AudioFormat", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace TextToSpeechServiceConsumer.Properties {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Langue.
         /// </summary>
-        internal static string Label_Language {
+        public static string Label_Language {
             get {
                 return ResourceManager.GetString("Label_Language", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace TextToSpeechServiceConsumer.Properties {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Speech rate.
         /// </summary>
-        internal static string Label_SpeechRate {
+        public static string Label_SpeechRate {
             get {
                 return ResourceManager.GetString("Label_SpeechRate", resourceCulture);
             }
