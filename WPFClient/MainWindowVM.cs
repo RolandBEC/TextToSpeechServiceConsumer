@@ -1,10 +1,13 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows.Input;
 using TextToSpeechServiceConsumer.WPFClient.MVVM;
 
 namespace TextToSpeechServiceConsumer.WPFClient
 {
     public class MainWindowVM : BaseViewModel
     {
+        public ICommand SendToTextSpeechCommand { get; set; }
+
 
         private string _text;
         public string Text

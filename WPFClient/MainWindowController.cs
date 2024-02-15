@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TextToSpeechServiceConsumer.WPFClient.MVVM;
 
 namespace TextToSpeechServiceConsumer.WPFClient
 {
@@ -16,12 +12,26 @@ namespace TextToSpeechServiceConsumer.WPFClient
         {
             ViewModel = new MainWindowVM()
             {
-                Text = "this is an text to speech",
+                SendToTextSpeechCommand = new RelayCommand(ExecuteSendToTextSpeechCommand, CanExecuteSendToTextSpeechCommand),
+                Text = "this is a text to speech",
                 Language = "en-US",
                 SpeechRate = 0, /*-10 to 10*/
                 SpeechAudioFormat = "mp3",
                 SpeechAudioCodec = "8khz_8bit_mono",
             };
+        }
+
+        private bool CanExecuteSendToTextSpeechCommand()
+        {
+            return 
+                !string.IsNullOrEmpty(ViewModel.Text) &&
+                ViewModel.SpeechRate >= -10 &&
+                ViewModel.SpeechRate <= 10;
+        }
+
+        private void ExecuteSendToTextSpeechCommand()
+        {
+
         }
     }
 }

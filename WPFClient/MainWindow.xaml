@@ -7,7 +7,10 @@
         xmlns:wpfClient="clr-namespace:TextToSpeechServiceConsumer.WPFClient"
         xmlns:resx="clr-namespace:TextToSpeechServiceConsumer.Properties"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" 
+        Height="400" Width="800"
+        MinHeight="400" MinWidth="800"
+        MaxHeight="400" MaxWidth="800"
         d:DataContext="{d:DesignInstance wpfClient:MainWindowVM}"
         Background="#EEEEEE">
     <Window.Resources>
@@ -21,14 +24,12 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
     </Window.Resources>
-    
-    <Grid Margin="5">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
-        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="3" Background="White">
+    <DockPanel Margin="5">
+
+        <Border DockPanel.Dock="Left" HorizontalAlignment="Left"
+                BorderBrush="DarkGray" BorderThickness="1" CornerRadius="3" Background="White"
+                Margin="0 0 20 0">
             <Grid Margin="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -76,5 +77,22 @@
 
         </Border>
 
-    </Grid>
+        <Grid HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox Grid.Row="0"
+                     Width="500" Height="150"
+                     AcceptsReturn="True"
+                     Margin="0 0 0 10"
+                     Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=200}"/>
+
+            <Button Grid.Row="1" 
+                    Content="Send"
+                    Command="{Binding SendToTextSpeechCommand}"/>
+        </Grid>
+        
+    </DockPanel>
 </Window>
